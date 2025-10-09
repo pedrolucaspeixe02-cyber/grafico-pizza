@@ -16,13 +16,17 @@ ax.pie(sizes, explode=explode, labels=labels, colors=colors,
 ax.axis('equal')
 plt.title('Distribuição de Linguagens de Programação')
 
+# Ajustar a posição do eixo para mover o gráfico para a esquerda
+box = ax.get_position()
+ax.set_position([box.x0 - 0.1, box.y0, box.width, box.height])
+
 # Criando os quadradinhos coloridos (retângulos) para legenda
-color_patches = [Rectangle((1, 1), 1, 1, facecolor=color) for color in colors]
+color_patches = [Rectangle((0, 0), 1, 1, facecolor=color) for color in colors]
 
 # Adicionando a legenda no canto inferior direito
 ax.legend(handles=color_patches, labels=labels,
           title="Linguagem", loc='center left',
-          bbox_to_anchor=(0.8, 0.9), frameon=True)
+          bbox_to_anchor=(0.95, 0.5), frameon=True)
 
 fig.savefig('grafico_pizza1.svg')   # Salva como SVG
 
