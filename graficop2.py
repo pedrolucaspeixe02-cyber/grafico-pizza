@@ -4,7 +4,7 @@ from matplotlib.patches import Rectangle
 # Dados do gráfico
 labels = ['Python', 'Java', 'C++', 'JavaScript', 'Ruby']
 sizes = [40, 20, 10, 20, 10]
-colors = ['#ff9999', '#66b3ff', '#99ff99', '#ffcc99', '#c2c2f0']
+colors = ["#ff0000", "#0080ff", "#00ff00", "#f97c00", "#0000ff"]
 explode = (0.1, 0, 0, 0, 0)
 
 # Criando a figura
