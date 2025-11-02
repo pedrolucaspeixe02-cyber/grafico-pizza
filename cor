@@ -1,0 +1,34 @@
+import matplotlib.colors as mcolors
+
+# Dicionário de tradução: português → inglês
+cores_pt_en = {
+    "vermelho": "red",
+    "verde": "green",
+    "azul": "blue",
+    "branco": "white",
+    "preto": "black",
+    "amarelo": "yellow",
+    "ciano": "cyan",
+    "magenta": "magenta",
+    "cinza": "gray",
+    "laranja": "orange",
+    "roxo": "purple",
+    "rosa": "pink",
+}
+
+def cor_para_hex(cor):
+    # Se a cor estiver no dicionário, converte para o nome em inglês
+    cor_ingles = cores_pt_en.get(cor, cor)  # Se não encontrar, mantém o valor original
+
+    try:
+        # Converte nome ou hex para valores
+        hex_cor = mcolors.to_hex(cor_ingles)
+        print(f"\nCor digitada: {cor}")
+        print(f"Nome reconhecido: {cor_ingles}")
+        print(f"Hexadecimal: {hex_cor}")
+    except ValueError:
+        print("\nCor inválida. Tente novamente com um nome válido ou código hexadecimal.")
+
+# Entrada do usuário
+entrada = input("Digite o nome de uma cor (ex: vermelho) ou código hex (ex: #00ff00): ")
+cor_para_hex(entrada.lower().strip())
